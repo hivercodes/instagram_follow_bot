@@ -50,9 +50,9 @@ time.sleep(2)
 target_followers = driver.find_element(By.XPATH, '//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a')
 target_followers.click()
 time.sleep(3)
-follow = driver.find_elements(By.LINK_TEXT, 'Follow')
-print(follow)
-
+follow = driver.find_elements(By.TAG_NAME, 'Button')
+for follower in follow:
+    print(follower.text)
 
 
 

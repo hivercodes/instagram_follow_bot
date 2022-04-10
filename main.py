@@ -22,7 +22,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 #log into instagram
 driver.get("https://instagram.com")
 time.sleep(1)
-cookies = driver.find_element(By.XPATH, '/html/body/div[4]/div/div/button[1]')
+cookies = driver.find_element(By.XPATH, '/html/body/div[4]/div/div/button[2]')
 time.sleep(2)
 cookies.click()
 username = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')
@@ -50,10 +50,9 @@ time.sleep(2)
 target_followers = driver.find_element(By.XPATH, '//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a')
 target_followers.click()
 time.sleep(3)
-follow = driver.find_elements(By.TAG_NAME, 'Button')
+follow = driver.find_elements(By.CLASS_NAME, 'sqdOP  L3NKy   y3zKF     ')
 for follower in follow:
-    print(follower.text)
-
+    print(follower)
 
 
 
